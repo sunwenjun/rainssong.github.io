@@ -27,12 +27,11 @@ function filter_timeline_feeds(feeds) {
         let i = feeds.length;
         while (i--) {
             let element = feeds[i];
-            if (element.type != 114) {
+            if (element.type != 113) {
                 feeds.splice(i, 1);
                 continue;
             }
-            let advert_id = element.advert_id;
-            if (advert_id && advert_id != 0) {
+            if (element.data && element.data.advert_id > 0) {
                 feeds.splice(i, 1);
                 continue;
             }

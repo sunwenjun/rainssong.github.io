@@ -17,7 +17,7 @@ if (
 ) {
     let obj = JSON.parse(body);
     if (obj.data.feed) obj.data.feed = filter_timeline_feeds(obj.data.feed);
-    if (obj.data.head.data.items) obj.data.head.data.items = filter_timeline_head(obj.data.head.data.items);
+    if (obj.data.head && obj.data.head.length > 0) obj.data.head[0].data.items = filter_timeline_head(obj.data.head[0].data.items);
     body = JSON.stringify(obj);
 } 
 

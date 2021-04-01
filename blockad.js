@@ -29,7 +29,7 @@ function filter_timeline_head(heads) {
         let i = heads.length;
         while (i--) {
             let element = heads[i];
-            if (element.advert_show && element.data.advert_show > 0) {
+            if (element.advert_show && element.advert_show > 0) {
                 heads.splice(i, 1);
                 continue;
             }

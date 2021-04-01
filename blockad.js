@@ -17,10 +17,26 @@ if (
 ) {
     let obj = JSON.parse(body);
     if (obj.data.feed) obj.data.feed = filter_timeline_feeds(obj.data.feed);
+    if (obj.data.head.data.items) obj.data.head.data.items = filter_timeline_head(obj.data.head.data.items);
     body = JSON.stringify(obj);
 } 
 
 $done({ body });
+
+
+function filter_timeline_head(heads) {
+    if (heads && heads.length > 0) {
+        let i = heads.length;
+        while (i--) {
+            let element = heads[i];
+            if (element.advert_show && element.data.advert_show > 0) {
+                heads.splice(i, 1);
+                continue;
+            }
+        }
+    }
+    return heads;
+}
 
 function filter_timeline_feeds(feeds) {
     if (feeds && feeds.length > 0) {

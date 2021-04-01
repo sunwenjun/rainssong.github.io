@@ -1,10 +1,10 @@
 /*
-Hualongxiang block ad
+xx block ad
 
 [rewrite_local]
-^https?://qfapi.hualongxiang.com/v5_0/home/index url script-response-body https://gist.githubusercontent.com/sunwenjun/46daca46d294816d83148984f7970d0f/raw/a5b23c91179f18d92efc10fce23c51ebdc83489a/blockad.js
+^https?://qfapi.xx.com/v5_0/home/index url script-response-body https://gist.githubusercontent.com//46daca46d294816d83148984f7970d0f/raw//blockad.js
 [mitm]
-hostname = *.hualongxiang.com
+hostname = *.xx.com
  */
 
 const path1 = "/home/index";
